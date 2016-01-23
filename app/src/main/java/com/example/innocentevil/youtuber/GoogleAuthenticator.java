@@ -1,7 +1,6 @@
 package com.example.innocentevil.youtuber;
 
 import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
@@ -51,8 +50,7 @@ public class GoogleAuthenticator implements Handler.Callback,AuthorizationCodeFl
         JSON_FACTORY = new JacksonFactory();
     }
 
-    private static final String API_KEY = "AIzaSyDGjl-xbBzdzHEl3I4MmiGaReEcDsTrZTQ";
-    private static final String CLIENT_ID = "437283115131-c6np4q0g52telt9rabgfisq0fbfdtfhn.apps.googleusercontent.com";
+    private static final String CLIENT_ID = "YOUR CLIENT ID";
     private static final String REDIRECT_URI = /*"urn:ietf:wg:oauth:2.0:oob"*/"http://localhost";
 
     /** Manage your YouTube account. */
@@ -98,8 +96,7 @@ public class GoogleAuthenticator implements Handler.Callback,AuthorizationCodeFl
 
 
     public GoogleAuthenticator(Context context, @NonNull YoutubeAuthListener listener) {
-        AccountManager accountManager = (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
-        googleAccounts = accountManager.getAccountsByType("com.google");
+
         mWcontext = new WeakReference<Context>(context);
         Activity activity = (Activity) context;
         fragmentManager = activity.getFragmentManager();
